@@ -58,22 +58,19 @@ class Create extends Action
                 $this->noteResource->save($newNote);
                 $this->messageManager->addSuccessMessage("New Ticket: $title Created");
 
-            } catch (AlreadyExistsException $e) {
-
-                $this->messageManager->addErrorMessage('A ticket with these exact details already exists!');
-
             } catch (\Exception $e) {
-
+                //Add a error message if we cant save the new note from some reason
                 $this->messageManager->addErrorMessage('Unable to save this ticket, please call your service provider');
 
             }
 
         } else {
-
+            // Add a helpful error message
             $this->messageManager->addErrorMessage("No data was posted");
 
         }
 
+        // Return to where we came from, here we're assuming the read notes page.
         return $this->_redirect("*/*/read");
     }
 
