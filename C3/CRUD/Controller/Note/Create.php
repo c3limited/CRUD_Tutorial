@@ -2,7 +2,7 @@
 
 namespace C3\CRUD\Controller\Note;
 
-use C3\CRUD\Controller\NoteFactory; // Factory classes are dynamically generated classes by Magento
+use C3\CRUD\Model\NoteFactory; // Factory classes are dynamically generated classes by Magento
 use C3\CRUD\Model\ResourceModel\Note;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
